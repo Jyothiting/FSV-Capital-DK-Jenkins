@@ -1,0 +1,80 @@
+.privacy-page {
+  min-height: 100vh;
+  background: var(--bg-base);
+  padding: var(--space-6) var(--space-5) var(--space-10);
+}
+
+.privacy-header {
+  max-width: 720px;
+  margin: 0 auto var(--space-6);
+}
+
+.privacy-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+  text-decoration: none;
+}
+
+.privacy-back:hover {
+  color: var(--brand-primary);
+}
+
+.privacy-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.privacy-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.privacy-brand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.privacy-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-8);
+}
+
+.privacy-content section {
+  margin-bottom: var(--space-6);
+}
+
+.privacy-content h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.privacy-content p,
+.privacy-content li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.privacy-content ul {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.25rem;
+}
+
+.privacy-updated {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}

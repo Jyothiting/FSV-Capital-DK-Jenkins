@@ -1,0 +1,27 @@
+{
+  "query": "What sectors does FSV Capital invest in, and what are typical seed check sizes?",
+  "mode": "retrieval_only",
+  "answer": "Top matches for \u201cWhat sectors does FSV Capital invest in, and what are typical seed check sizes?\u201d:\n- **investment_policy.txt** (50% match): FSV Capital \u2014 Investment Policy (Effective 2025)\n\nMission: Back exceptional founders building category-defining companies in Fintech, Artificial Intelligence,\nBlockchain infrastructure, and DeepTech.\n\nStage focus:\n- Pre-seed: USD 250,000 \u2013 USD 750,000 (idea/MVP with early signals)\n- Seed: USD 500,000 \u2013 USD 2,000,000 (product in market, repeatable GTM)\n- Series A: USD 2,000,000 \u2013 USD 8,000,000 (sca...\n- **due_diligence_checklist.txt** (43% match): FSV Capital \u2014 Due Diligence Checklist (Analyst Edition)\n\nBefore IC presentation, complete:\n\n1. Corporate & legal\n   - Certificate of incorporation, cap table, founder agreements\n   - IP assignment, pending litigation, regulatory licences (RBI/SEBI where applicable)\n\n2. Product & technology\n   - Architecture review, security posture, SOC2 roadmap\n   - Customer references (minimum 3 for B2B)\n\n3. Fin...\n- **seed_term_sheet_guide.txt** (43% match): Seed Stage Term Sheet \u2014 FSV Capital Standard Positions\n\nTypical seed economics (illustrative, deal-specific):\n- Investment: USD 500k\u20132M on SAFE or priced equity\n- Option pool: 10\u201315% post-money\n- Board: observer rights at seed; full seat at Series A\n\nStandard provisions: pro-rata rights, information rights, MFN on future rounds.\nFounder vesting: 4-year with 1-year cliff if not already in place.\n\nT...\n- **dpdp_compliance_summary.txt** (36% match): India Digital Personal Data Protection Act (DPDP) 2023 \u2014 Summary for Portfolio\n\nApplicability: Processing personal data in India; consent required for most purposes.\n\nStartup obligations:\n- Privacy notice at collection (funding forms, SaaS signup)\n- Purpose limitation; data minimization\n- Breach notification to Data Protection Board\n- Cross-border transfer rules for cloud hosting\n\nFSV Capital fund...\n- **ai_market_outlook_2025.txt** (29% match): AI Market Outlook 2025 \u2014 Enterprise Adoption\n\nGenerative AI enterprise spend is forecast to exceed USD 150B globally by 2028 across multiple analyst outlooks.\nNear-term winners: vertical applications (legal, healthcare ops, developer tools), GPU-efficient inference,\nand RAG knowledge systems for regulated industries.\n\nFSV Capital looks for:\n- Defensible data loops or proprietary evaluation benchma...",
+  "sources": [
+    {
+      "original_name": "investment_policy.txt",
+      "similarity_score": 0.5
+    },
+    {
+      "original_name": "due_diligence_checklist.txt",
+      "similarity_score": 0.42857142857142855
+    },
+    {
+      "original_name": "seed_term_sheet_guide.txt",
+      "similarity_score": 0.42857142857142855
+    },
+    {
+      "original_name": "dpdp_compliance_summary.txt",
+      "similarity_score": 0.35714285714285715
+    },
+    {
+      "original_name": "ai_market_outlook_2025.txt",
+      "similarity_score": 0.2857142857142857
+    }
+  ]
+}

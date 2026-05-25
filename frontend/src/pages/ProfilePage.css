@@ -1,0 +1,197 @@
+/* ============================================================
+   PROFILE PAGE
+   ============================================================ */
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+/* ── Avatar Card ────────────────────────────────────────────── */
+.profile-avatar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  position: sticky;
+  top: var(--space-6);
+}
+
+.profile-avatar-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--gradient-brand);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15), var(--shadow-brand);
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.profile-avatar-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-1);
+}
+
+.profile-avatar-email {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.profile-role-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: rgb(79 70 229 / 10%);
+  border: 1px solid var(--border-brand);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  color: var(--text-brand);
+}
+
+.profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.profile-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  justify-content: center;
+}
+
+.profile-meta-row svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Right forms column ─────────────────────────────────────── */
+.profile-forms {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Each section card ──────────────────────────────────────── */
+.profile-section {
+  padding: var(--space-6);
+}
+
+.profile-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.profile-section-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Form ───────────────────────────────────────────────────── */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.profile-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--space-2);
+}
+
+/* ── Inline messages ─────────────────────────────────────────  */
+.profile-msg {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-2);
+}
+
+.profile-msg-ok {
+  background: rgb(16 185 129 / 10%);
+  border: 1px solid rgb(16 185 129 / 25%);
+  color: var(--success);
+}
+
+.profile-msg-err {
+  background: rgb(239 68 68 / 8%);
+  border: 1px solid rgb(239 68 68 / 25%);
+  color: var(--error);
+}
+
+/* ── Account details grid ───────────────────────────────────── */
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.profile-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.profile-detail-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.profile-detail-val {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (width <= 860px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile-avatar-card {
+    position: static;
+  }
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

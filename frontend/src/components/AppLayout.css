@@ -1,0 +1,27 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: 240px;
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-8);
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let page-level containers grow to fill the main area */
+.app-main > * {
+  flex: 1;
+}
+
+@media (width <= 768px) {
+  .app-main {
+    margin-left: 0;
+    padding: var(--space-5);
+  }
+}

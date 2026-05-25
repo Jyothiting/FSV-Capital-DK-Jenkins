@@ -1,0 +1,288 @@
+/* ============================================================
+   LOGIN PAGE — Split Screen Layout
+   Left: Particle Canvas + Branding  |  Right: Login Form
+   ============================================================ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* ── Left Visual Panel ──────────────────────────────────────── */
+.login-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: #0a0e1a; /* fallback while canvas loads */
+}
+
+/* Canvas fills the entire left panel */
+.particle-canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+}
+
+/* Semi-transparent overlay so text is readable over the canvas */
+.visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10, 14, 26, 0.45) 0%,
+    rgba(15, 23, 42, 0.25) 50%,
+    rgba(79, 70, 229, 0.20) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  z-index: 1;
+}
+
+/* ── Branding ───────────────────────────────────────────────── */
+.login-visual .login-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.login-visual .brand-name {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.login-visual .brand-tagline {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  margin-top: 2px;
+}
+
+/* ── Visual Text (hero copy) ───────────────────────────────── */
+.visual-text {
+  color: #fff;
+  max-width: 420px;
+}
+
+.visual-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+}
+
+.visual-text h2 {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.visual-text p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* ── Visual Stats Bar ───────────────────────────────────────── */
+.visual-stats {
+  display: flex;
+  gap: 28px;
+}
+
+.vstat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vstat-val {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #c7d2fe;
+  letter-spacing: -0.02em;
+}
+
+.vstat-lbl {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Right Form Panel ───────────────────────────────────────── */
+.login-panel {
+  width: 480px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 44px;
+  border-left: 1px solid var(--border-default);
+  overflow-y: auto;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Login Header ───────────────────────────────────────────── */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.login-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ── Error Banner ───────────────────────────────────────────── */
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 14px;
+  background: rgb(239 68 68 / 8%);
+  border: 1px solid rgb(239 68 68 / 25%);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--error);
+}
+
+/* ── Login Form ─────────────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Footer Link ────────────────────────────────────────────── */
+.login-footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.login-footer a {
+  color: var(--brand-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Brand Icon (shared) ────────────────────────────────────── */
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+/* ── Demo Credentials Hint ──────────────────────────────────── */
+.login-hint {
+  padding: var(--space-4) var(--space-5);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.hint-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.hint-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.hint-row code {
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid var(--border-brand);
+  border-radius: var(--radius-sm);
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  color: var(--text-brand);
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (width <= 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-visual {
+    min-height: 280px;
+    flex: none;
+  }
+
+  .visual-overlay {
+    padding: 28px 24px;
+  }
+
+  .visual-stats {
+    gap: 18px;
+  }
+
+  .login-panel {
+    width: 100%;
+    padding: 36px 24px;
+    border-left: none;
+    border-top: 1px solid var(--border-default);
+  }
+}

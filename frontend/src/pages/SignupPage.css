@@ -1,0 +1,289 @@
+/* ============================================================
+   SIGNUP PAGE — Split Screen Layout
+   Left: Particle Canvas + Hero  |  Right: Registration Form
+   ============================================================ */
+
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* ── Left Visual Panel ──────────────────────────────────────── */
+.signup-visual {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #0a0e1a;
+}
+
+.signup-visual .particle-canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+}
+
+.signup-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10, 14, 26, 0.45) 0%,
+    rgba(15, 23, 42, 0.22) 50%,
+    rgba(79, 70, 229, 0.18) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  z-index: 1;
+}
+
+/* ── Branding on visual side ────────────────────────────────── */
+.signup-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.signup-brand .brand-name {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.signup-brand .brand-tagline {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  margin-top: 2px;
+}
+
+/* ── Hero copy ──────────────────────────────────────────────── */
+.signup-hero {
+  color: #fff;
+  max-width: 420px;
+}
+
+.visual-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+}
+
+.signup-hero h2 {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.signup-hero p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* Feature checklist */
+.signup-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.signup-features li svg {
+  color: #a5b4fc;
+  flex-shrink: 0;
+}
+
+/* ── Right Form Panel ───────────────────────────────────────── */
+.signup-panel {
+  width: 520px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 44px;
+  border-left: 1px solid var(--border-default);
+  overflow-y: auto;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Signup Header ──────────────────────────────────────────── */
+.signup-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.signup-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.signup-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ── Error Banner ───────────────────────────────────────────── */
+.signup-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 14px;
+  background: rgb(239 68 68 / 8%);
+  border: 1px solid rgb(239 68 68 / 25%);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--error);
+}
+
+/* ── Form ───────────────────────────────────────────────────── */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.required {
+  color: var(--brand-secondary);
+  font-size: 0.8em;
+}
+
+/* ── Password Strength Bar ──────────────────────────────────── */
+.pwd-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.pwd-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.pwd-bar {
+  height: 4px;
+  flex: 1;
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+.pwd-strength span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.signup-footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.signup-footer a {
+  color: var(--brand-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Success State ──────────────────────────────────────────── */
+.signup-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-12) 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgb(16 185 129 / 10%);
+  border: 2px solid rgb(16 185 129 / 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-success h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.signup-success p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (width <= 960px) {
+  .signup-page {
+    flex-direction: column;
+  }
+
+  .signup-visual {
+    min-height: 280px;
+    flex: none;
+  }
+
+  .signup-visual-overlay {
+    padding: 28px 24px;
+  }
+
+  .signup-panel {
+    width: 100%;
+    padding: 36px 24px;
+    border-left: none;
+    border-top: 1px solid var(--border-default);
+  }
+}

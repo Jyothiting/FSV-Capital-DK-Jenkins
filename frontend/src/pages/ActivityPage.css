@@ -1,0 +1,166 @@
+/* ============================================================
+   ACTIVITY LOG PAGE — Timeline Layout
+   ============================================================ */
+
+/* ── Filter row ─────────────────────────────────────────────── */
+.act-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Timeline container ─────────────────────────────────────── */
+.activity-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Skeleton placeholder ───────────────────────────────────── */
+.act-skeleton {
+  height: 72px;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+}
+
+/* ── Each entry row ─────────────────────────────────────────── */
+.act-entry {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+/* ── Left column: dot + connector ───────────────────────────── */
+.act-line-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 14px;
+}
+
+.act-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Dot colors */
+.act-dot-indigo { background: rgb(99 102 241 / 18%); color: #818cf8; border: 1.5px solid rgb(99 102 241 / 30%); }
+.act-dot-green  { background: rgb(16 185 129 / 15%); color: #34d399; border: 1.5px solid rgb(16 185 129 / 25%); }
+.act-dot-amber  { background: rgb(245 158 11 / 15%); color: #fbbf24; border: 1.5px solid rgb(245 158 11 / 25%); }
+.act-dot-blue   { background: rgb(59 130 246 / 15%); color: #60a5fa; border: 1.5px solid rgb(59 130 246 / 25%); }
+.act-dot-violet { background: rgb(139 92 246 / 15%); color: #a78bfa; border: 1.5px solid rgb(139 92 246 / 25%); }
+.act-dot-cyan   { background: rgb(6 182 212 / 15%);  color: #22d3ee; border: 1.5px solid rgb(6 182 212 / 25%); }
+.act-dot-gray   { background: var(--bg-elevated);     color: var(--text-muted); border: 1.5px solid var(--border-default); }
+
+.act-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 16px;
+  background: var(--border-subtle);
+  margin: 4px 0;
+}
+
+/* ── Entry card ─────────────────────────────────────────────── */
+.act-card {
+  flex: 1;
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.act-card:hover {
+  border-color: var(--border-brand);
+  box-shadow: var(--shadow-brand);
+}
+
+.act-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Badge colors matching dot colors */
+.act-badge-indigo { background: rgb(99 102 241 / 12%); color: #818cf8; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-green  { background: rgb(16 185 129 / 12%); color: #34d399; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-amber  { background: rgb(245 158 11 / 12%); color: #fbbf24; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-blue   { background: rgb(59 130 246 / 12%); color: #60a5fa; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-violet { background: rgb(139 92 246 / 12%); color: #a78bfa; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-cyan   { background: rgb(6 182 212 / 12%);  color: #22d3ee; border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.act-badge-gray   { background: var(--bg-elevated);    color: var(--text-muted); border-radius: var(--radius-full); padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+
+.act-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.act-user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  padding: 2px 8px;
+}
+
+.act-details {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+.act-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.act-timestamp {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.act-ip {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* ── Pagination ─────────────────────────────────────────────── */
+.act-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.act-page-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (width <= 640px) {
+  .act-line-col { display: none; }
+  .act-entry    { gap: 0; }
+}
