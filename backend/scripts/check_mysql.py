@@ -1,5 +1,5 @@
 """
-Confirm the app is configured for MySQL (assignment requirement).
+Confirm the app is configured for MySQL.
 Run from backend/:  python scripts/check_mysql.py
 Exits 0 on success, 1 on failure.
 """
@@ -19,7 +19,7 @@ def main() -> int:
     url = settings.DATABASE_URL
     if url.startswith("sqlite"):
         print("FAIL: DATABASE_URL points to SQLite.")
-        print("  Set MySQL in backend/.env (see .env.example) for assignment grading.")
+        print("  Set MySQL in backend/.env (see .env.example).")
         return 1
 
     if "mysql" not in url.lower():
@@ -37,7 +37,7 @@ def main() -> int:
 
     print(f"OK: Connected to MySQL database '{db_name}'.")
     print("  Runtime (main.py, seed.py, verify_system.py) uses this database.")
-    print("  pytest uses SQLite only — see docs/GRADING.md.")
+    print("  pytest uses SQLite only — see docs/TESTING.md.")
     return 0
 
 

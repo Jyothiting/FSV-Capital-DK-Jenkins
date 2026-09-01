@@ -1,6 +1,8 @@
 # FSV Capital — Startup Funding & AI Knowledge Platform
 
-Full-stack MVP combining:
+A full-stack project I built to explore how AI can plug into a real venture-capital workflow — from investor-grade deal intake to a JWT-secured knowledge base with RAG-powered search. FSV Capital is a fictional VC firm I made up for the project; everything here (data, seed content, branding) is demo material.
+
+It combines:
 
 1. **Startup Funding Application** — 11-step investor-grade intake form with pitch deck upload and deal scoring
 2. **AI Task & Knowledge Management** — JWT/RBAC portal where admins upload documents, users run semantic search, and complete assigned tasks
@@ -60,9 +62,9 @@ Default `DATABASE_URL` in `.env.example`:
 mysql+pymysql://fsv_user:fsv_password@localhost:3306/fsv_capital?charset=utf8mb4
 ```
 
-**SQLite fallback (local testing only):** uncomment the SQLite line in `.env` — used by `pytest` only. **For assignment grading, use MySQL** as configured in `.env.example`.
+**SQLite fallback (local testing only):** uncomment the SQLite line in `.env` — used by `pytest` only. **For normal use, run on MySQL** as configured in `.env.example`.
 
-**For graders:** `pytest` always uses SQLite (`test_fsv.db`) for speed — it does **not** validate MySQL. Confirm MySQL with `python scripts/check_mysql.py`, then run the live app + `verify_system.py`. See **[docs/GRADING.md](docs/GRADING.md)**.
+**Note:** `pytest` always uses SQLite (`test_fsv.db`) for speed — it does **not** validate MySQL. Confirm MySQL with `python scripts/check_mysql.py`, then run the live app + `verify_system.py`. See **[docs/TESTING.md](docs/TESTING.md)**.
 
 **Memory-safe tips (avoid OOM on laptops):**
 
@@ -281,7 +283,7 @@ Backend allows `http://localhost:5173` and `5174`. Run the frontend on one of th
 cd backend
 ..\.venv\Scripts\python seed.py
 ..\.venv\Scripts\python main.py          # separate terminal
-..\.venv\Scripts\python scripts\check_mysql.py     # confirm MySQL (graders)
+..\.venv\Scripts\python scripts\check_mysql.py     # confirm MySQL is configured
 ..\.venv\Scripts\python scripts\verify_system.py   # 40 E2E checks (MySQL API)
 $env:SKIP_EMBEDDINGS="1"
 ..\.venv\Scripts\pytest tests/ -v                  # 39 tests (SQLite)
@@ -305,9 +307,9 @@ $env:SKIP_EMBEDDINGS="1"
 ..\.venv\Scripts\pytest tests/ -v
 ```
 
-`conftest.py` forces `DATABASE_URL=sqlite:///./test_fsv.db`. This is intentional; graders should still run the app on **MySQL** (see [docs/GRADING.md](docs/GRADING.md)).
+`conftest.py` forces `DATABASE_URL=sqlite:///./test_fsv.db`. This is intentional; run the app itself on **MySQL** (see [docs/TESTING.md](docs/TESTING.md)).
 
-### Confirm MySQL (graders)
+### Confirm MySQL
 
 ```powershell
 cd backend
@@ -324,7 +326,7 @@ npm run test:run
 
 Covers `validateStep`, traction screening, and `calcDealScore` — not full UI/browser tests.
 
-## P2 features
+## Additional features
 
 - **Server-side drafts** — `PUT/GET/DELETE /applications/draft` (resume by email or logged-in user)
 - **Task assignee picker** — `GET /auth/assignees` (admin) + dropdown on Tasks page
@@ -332,4 +334,4 @@ Covers `validateStep`, traction screening, and `calcDealScore` — not full UI/b
 
 ## License
 
-Internal assignment project — Future Transformation Pvt Ltd.
+MIT — see [LICENSE](LICENSE). Built by [Nishanth](https://github.com/nishanthsr7-eng) as a personal project.

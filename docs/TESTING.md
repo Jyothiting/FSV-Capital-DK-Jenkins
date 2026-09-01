@@ -1,12 +1,12 @@
-# Notes for graders / evaluators
+# Testing notes
 
 ## MySQL vs pytest (important)
 
 | What you run | Database | Purpose |
 |--------------|----------|---------|
-| **`python main.py`** + **`python seed.py`** | **MySQL** (from `backend/.env`) | **Assignment runtime** — this is what you should grade |
+| **`python main.py`** + **`python seed.py`** | **MySQL** (from `backend/.env`) | **Normal runtime** — this is how the app is meant to run |
 | **`pytest tests/`** | **SQLite** (`backend/test_fsv.db`) | Fast, isolated API tests — no MySQL install required |
-| **`python scripts/verify_system.py`** | **MySQL** (via running API) | Full E2E against live server |
+| **`python scripts/verify_system.py`** | **MySQL** (via running API) | Full end-to-end check against a live server |
 
 **pytest does not prove MySQL works** — it intentionally overrides `DATABASE_URL` in `backend/tests/conftest.py` to SQLite.
 
@@ -19,7 +19,7 @@ cd backend
 
 Expected: `OK: Connected to MySQL database 'fsv_capital'`.
 
-Then start the app and run E2E checks:
+Then start the app and run the end-to-end checks:
 
 ```powershell
 ..\.venv\Scripts\python seed.py
@@ -27,7 +27,7 @@ Then start the app and run E2E checks:
 ..\.venv\Scripts\python scripts\verify_system.py
 ```
 
-### Full grading flow (recommended)
+### Full verification flow (recommended)
 
 ```powershell
 # 1. Backend on MySQL
@@ -38,7 +38,7 @@ copy .env.example .env    # edit DATABASE_URL if needed
 ..\.venv\Scripts\python seed.py
 ..\.venv\Scripts\python main.py          # terminal A
 
-# 2. E2E (MySQL-backed API)
+# 2. End-to-end (MySQL-backed API)
 ..\.venv\Scripts\python scripts\verify_system.py   # terminal B
 
 # 3. Unit/integration tests (SQLite — fast)

@@ -7,7 +7,7 @@ from schemas.application import StartupApplicationCreate
 
 PRIORITY_SECTOR_KEYWORDS = ("fintech", "ai", "blockchain", "deeptech")
 
-# Stages that must include at least one traction metric (assignment: mandatory traction section)
+# Stages that must include at least one traction metric (mandatory traction section)
 TRACTION_REQUIRED_STAGES = frozenset({"Idea", "MVP", "Early Revenue", "Growth Stage", "Scaling"})
 
 # Typical USD ranges by funding stage (min, max)

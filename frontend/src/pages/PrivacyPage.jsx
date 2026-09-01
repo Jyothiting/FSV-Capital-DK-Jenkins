@@ -86,7 +86,7 @@ export default function PrivacyPage() {
           <p>
             For privacy requests or questions: <strong>privacy@fsvcapital.com</strong>
             <br />
-            Future Transformation Pvt Ltd — FSV Capital
+            FSV Capital
           </p>
         </section>
 

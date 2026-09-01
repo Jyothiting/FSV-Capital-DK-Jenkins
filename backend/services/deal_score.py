@@ -1,4 +1,4 @@
-"""Investor deal score (0–100) — multi-axis rubric aligned with assignment spec."""
+"""Investor deal score (0–100) — multi-axis rubric."""
 
 from typing import Any, Dict, Union
 

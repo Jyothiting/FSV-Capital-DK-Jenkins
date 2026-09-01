@@ -85,7 +85,7 @@ class StartupApplication(Base):
 
     status = Column(String(50), default="Submitted") # Submitted, Under Review, Rejected, Accepted
     
-    # Connection to Admin/Assignment 2
+    # Admin who reviewed this application
     reviewer_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     reviewer_notes = Column(Text, nullable=True)
     

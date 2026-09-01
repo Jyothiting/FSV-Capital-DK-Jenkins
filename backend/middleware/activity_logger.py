@@ -4,7 +4,7 @@ from models import ActivityLog
 
 def log_activity(db: Session, user_id: int, action: str, details: str = None, request: Request = None):
     """
-    Utility function to log activities as per Assignment 2 requirements.
+    Utility function to log activities.
     Actions: 'login', 'task_update', 'document_upload', 'search'
     """
     ip_address = None

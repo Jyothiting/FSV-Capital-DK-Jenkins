@@ -2,31 +2,31 @@
 
 Verified via `python seed.py`, `python scripts/verify_system.py` (**40+**), and `pytest tests/` (**33+**).
 
-## Assignment 1 — Startup Funding Web Form
+## Startup Funding Web Form
 
-| Requirement | Status | Notes |
-|-------------|--------|-------|
+| Feature | Status | Notes |
+|---------|--------|-------|
 | All 11 form sections | ✅ | `FundingForm.jsx` |
 | Investor-grade UI + multi-step | ✅ | Progress bar, sidebar steps |
 | Save & resume | ✅ | localStorage + `PUT/GET /applications/draft` |
-| Per-step validation | ✅ | P1 |
+| Per-step validation | ✅ | |
 | Screening rules (traction all stages, sector, funding) | ✅ | Frontend + backend |
 | Pitch deck PDF upload (mandatory) | ✅ | Stored under `uploads/applications/` |
 | Deal score 0–100 (multi-axis rubric) | ✅ | `deal_score.py` + `dealScore.js` |
 | LinkedIn founder + company | ✅ | Split fields + legacy `linkedin_profile` |
 | Admin applications list + review | ✅ | `/applications` |
 | CSV export | ✅ | Applications page |
-| Consent + DPDP privacy link | ✅ | `/privacy` |
-| Branding (title + tagline) | ✅ | Per PDF spec |
+| Consent + privacy link | ✅ | `/privacy` |
+| Branding (title + tagline) | ✅ | |
 | Financial model file upload | ✅ | `.xlsx/.xls/.csv/.pdf` + optional Drive link |
 | Product screenshots upload | ✅ | Up to 5 images |
 | Additional documents upload | ✅ | Up to 5 files (pdf, txt, docx, xlsx) |
-| CRM / email integrations | ➖ | Not required per brief |
+| CRM / email integrations | ➖ | Out of scope for now |
 
-## Assignment 2 — AI Task & Knowledge Management
+## AI Task & Knowledge Management
 
-| Requirement | Status | Notes |
-|-------------|--------|-------|
+| Feature | Status | Notes |
+|---------|--------|-------|
 | JWT authentication | ✅ | `/auth/login`, `/auth/register` |
 | RBAC admin / user | ✅ | All protected routes |
 | MySQL database | ✅ | Configure via `backend/.env` |
@@ -43,7 +43,7 @@ Verified via `python seed.py`, `python scripts/verify_system.py` (**40+**), and 
 | React frontend | ✅ | |
 | README + setup | ✅ | |
 | Automated tests | ✅ | `backend/tests/` + `frontend` Vitest smoke tests |
-| Assignee dropdown (P2) | ✅ | `GET /auth/assignees` |
+| Assignee dropdown | ✅ | `GET /auth/assignees` |
 
 ## Demo credentials (after seed)
 
@@ -64,15 +64,14 @@ $env:SKIP_EMBEDDINGS="1"
 cd ..\frontend && npm run test:run
 ```
 
-Grader notes: [docs/GRADING.md](docs/GRADING.md) (MySQL vs SQLite).
-```
+Testing notes: [docs/TESTING.md](docs/TESTING.md) (MySQL vs SQLite).
 
 ## Seeded demo data (after `python seed.py`)
 
 | Data | Count | Notes |
 |------|-------|-------|
 | Startup applications | 6 | Full form fields + real `pitch_deck.pdf` on disk |
-| Knowledge-base `.txt` docs | 9 | VC/fintech/AI/blockchain/DPDP content |
+| Knowledge-base `.txt` docs | 9 | VC/fintech/AI/blockchain content |
 | Tasks | 6 | pending / in_progress / completed |
 | Activity logs | 15 | search, RAG, reviews, uploads |
 | Application draft | 1 | `draft-demo@fsvcapital.com` step 4 |
