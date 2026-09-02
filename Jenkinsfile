@@ -24,7 +24,7 @@ pipeline {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER} '
                             cd ${APP_DIR} &&
-                            git pull origin main &&
+                            git pull origin master &&
                             docker compose down &&
                             docker compose build &&
                             docker compose up -d
