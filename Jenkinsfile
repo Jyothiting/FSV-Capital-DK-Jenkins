@@ -1,3 +1,4 @@
+```groovy
 pipeline {
 
     agent any
@@ -18,7 +19,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-
                 sshagent(['deployment-ssh']) {
 
                     sh """
@@ -35,29 +35,37 @@ pipeline {
         }
 
         stage('Verify') {
-    steps {
-        sshagent(['ubuntu']) {
-            sh '''
-                ssh -o StrictHostKeyChecking=no ubuntu@13.206.100.195 "
-                    cd /home/ubuntu/FSV-Capital-DK-Jenkins &&
-                    docker compose ps &&
-                    for i in 1 2 3 4 5 6; do
-                        echo \"Health check attempt \$i...\"
-                        if curl -f http://localhost:8000/health; then
-                            echo \"Backend is healthy!\"
-                            exit 0
-                        fi
-                        sleep 5
-                    done
-                    echo \"Backend health check failed\"
-                    docker logs --tail 100 fsv-backend
-                    exit 1
-                "
-            '''
+            steps {
+                sshagent(['deployment-ssh']) {
+
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER} '
+                            cd ${APP_DIR} &&
+                            docker compose ps &&
+
+                            for i in 1 2 3 4 5 6; do
+                                echo "Health check attempt \$i..."
+
+                                if curl -f http://localhost:8000/health; then
+                                    echo "Backend is healthy!"
+                                    exit 0
+                                fi
+
+                                sleep 5
+                            done
+
+                            echo "Backend health check failed"
+                            docker logs --tail 100 fsv-backend
+                            exit 1
+                        '
+                    """
+                }
+            }
         }
     }
-}
+
     post {
+
         success {
             echo 'Deployment successful!'
         }
@@ -67,3 +75,5 @@ pipeline {
         }
     }
 }
+```
+
